@@ -1,24 +1,2192 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿@charset "UTF-8";
+@import url(font-awesome.min.css);
+@import url("https://fonts.googleapis.com/css?family=Lato:300,700,300italic,700italic");
+
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
+body {
+    line-height: 1;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+    blockquote:before, blockquote:after, q:before, q:after {
+        content: '';
+        content: none;
+    }
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+body {
+    -webkit-text-size-adjust: none;
+}
+
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* Basic */
+
+@-ms-viewport {
+    width: device-width;
+}
+
+body {
+    -ms-overflow-style: scrollbar;
+}
+
+@media screen and (max-width: 480px) {
+
+    html, body {
+        min-width: 320px;
+    }
+}
+
+body {
+    background: #fff;
+}
+
+    body.is-loading *, body.is-loading *:before, body.is-loading *:after {
+        -moz-animation: none !important;
+        -webkit-animation: none !important;
+        -ms-animation: none !important;
+        animation: none !important;
+        -moz-transition: none !important;
+        -webkit-transition: none !important;
+        -ms-transition: none !important;
+        transition: none !important;
+    }
+
+/* Type */
+
+body {
+    background-color: #fff;
+    color: #444;
+}
+
+body, input, select, textarea {
+    font-family: "Lato", Arial, Helvetica, sans-serif;
+    font-size: 16pt;
+    font-weight: 300;
+    line-height: 1.75;
+}
+
+@media screen and (max-width: 1680px) {
+
+    body, input, select, textarea {
+        font-size: 13pt;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+
+    body, input, select, textarea {
+        font-size: 12pt;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+strong, b {
+    font-weight: 700;
+}
+
+em, i {
+    font-style: italic;
+}
+
+p {
+    margin: 0 0 2em 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 0 0 1em 0;
+}
+
+    h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+        color: inherit;
+    }
+
+h1 {
+    font-size: 2.35em;
+}
+
+h2 {
+    font-size: 1.75em;
+}
+
+h3 {
+    font-size: 1.35em;
+}
+
+h4 {
+    font-size: 1.1em;
+}
+
+h5 {
+    font-size: 0.9em;
+}
+
+h6 {
+    font-size: 0.7em;
+}
+
+sub {
+    font-size: 0.8em;
+    position: relative;
+    top: 0.5em;
+}
+
+sup {
+    font-size: 0.8em;
+    position: relative;
+    top: -0.5em;
+}
+
+blockquote {
+    border-left: solid 4px;
+    font-style: italic;
+    margin: 0 0 2em 0;
+    padding: 0.5em 0 0.5em 2em;
+}
+
+code {
+    border-radius: 0;
+    border: solid 1px;
+    font-family: "Courier New", monospace;
+    font-size: 0.9em;
+    margin: 0 0.25em;
+    padding: 0.25em 0.65em;
+}
+
+pre {
+    -webkit-overflow-scrolling: touch;
+    font-family: "Courier New", monospace;
+    font-size: 0.9em;
+    margin: 0 0 2em 0;
+}
+
+    pre code {
+        display: block;
+        line-height: 1.75;
+        padding: 1em 1.5em;
+        overflow-x: auto;
+    }
+
+hr {
+    border: 0;
+    border-bottom: solid 1px;
+    margin: 2em 0;
+}
+
+    hr.major {
+        margin: 3em 0;
+    }
+
+.align-left {
+    text-align: left;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.align-right {
+    text-align: right;
+}
+
+input, select, textarea {
+    color: #555;
+}
+
+a {
+    color: #1abc9c;
+}
+
+strong, b {
+    color: #555;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #555;
+}
+
+blockquote {
+    border-left-color: rgba(144, 144, 144, 0.25);
+}
+
+code {
+    background: rgba(144, 144, 144, 0.075);
+    border-color: rgba(144, 144, 144, 0.25);
+}
+
+hr {
+    border-bottom-color: rgba(144, 144, 144, 0.25);
+}
+
+/* Box */
+
+.box {
+    border-radius: 0;
+    border: solid 1px;
+    margin-bottom: 2em;
+    padding: 1.5em;
+}
+
+    .box > :last-child,
+    .box > :last-child > :last-child,
+    .box > :last-child > :last-child > :last-child {
+        margin-bottom: 0;
+    }
+
+    .box.alt {
+        border: 0;
+        border-radius: 0;
+        padding: 0;
+    }
+
+.box {
+    border-color: rgba(144, 144, 144, 0.25);
+}
+
+/* Button */
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button,
+.button {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    -moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    -ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    border-radius: 0;
+    border: 0;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 700;
+    height: 3em;
+    line-height: 3em;
+    padding: 0 2.5em;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+    input[type="submit"]:hover,
+    input[type="reset"]:hover,
+    input[type="button"]:hover,
+    button:hover,
+    .button:hover {
+        text-decoration: none;
+    }
+
+    input[type="submit"].icon,
+    input[type="reset"].icon,
+    input[type="button"].icon,
+    button.icon,
+    .button.icon {
+        padding-left: 1.35em;
+    }
+
+        input[type="submit"].icon:before,
+        input[type="reset"].icon:before,
+        input[type="button"].icon:before,
+        button.icon:before,
+        .button.icon:before {
+            margin-right: 0.5em;
+        }
+
+    input[type="submit"].fit,
+    input[type="reset"].fit,
+    input[type="button"].fit,
+    button.fit,
+    .button.fit {
+        display: block;
+        margin: 0 0 1em 0;
+        width: 100%;
+    }
+
+    input[type="submit"].small,
+    input[type="reset"].small,
+    input[type="button"].small,
+    button.small,
+    .button.small {
+        font-size: 0.8em;
+    }
+
+    input[type="submit"].big,
+    input[type="reset"].big,
+    input[type="button"].big,
+    button.big,
+    .button.big {
+        font-size: 1.25em;
+    }
+
+    input[type="submit"].disabled, input[type="submit"]:disabled,
+    input[type="reset"].disabled,
+    input[type="reset"]:disabled,
+    input[type="button"].disabled,
+    input[type="button"]:disabled,
+    button.disabled,
+    button:disabled,
+    .button.disabled,
+    .button:disabled {
+        -moz-pointer-events: none;
+        -webkit-pointer-events: none;
+        -ms-pointer-events: none;
+        pointer-events: none;
+        opacity: 0.25;
+    }
+
+@media screen and (max-width: 480px) {
+
+    input[type="submit"],
+    input[type="reset"],
+    input[type="button"],
+    button,
+    .button {
+        padding: 0;
+    }
+}
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button,
+.button {
+    background-color: #1abc9c;
+    color: #fff !important;
+}
+
+    input[type="submit"]:hover,
+    input[type="reset"]:hover,
+    input[type="button"]:hover,
+    button:hover,
+    .button:hover {
+        background-color: #1dd2af;
+    }
+
+    input[type="submit"]:active,
+    input[type="reset"]:active,
+    input[type="button"]:active,
+    button:active,
+    .button:active {
+        background-color: #17a689;
+    }
+
+    input[type="submit"].alt,
+    input[type="reset"].alt,
+    input[type="button"].alt,
+    button.alt,
+    .button.alt {
+        background-color: transparent;
+        box-shadow: inset 0 0 0 2px rgba(144, 144, 144, 0.25);
+        color: #555 !important;
+    }
+
+        input[type="submit"].alt:hover,
+        input[type="reset"].alt:hover,
+        input[type="button"].alt:hover,
+        button.alt:hover,
+        .button.alt:hover {
+            background-color: rgba(144, 144, 144, 0.075);
+        }
+
+        input[type="submit"].alt:active,
+        input[type="reset"].alt:active,
+        input[type="button"].alt:active,
+        button.alt:active,
+        .button.alt:active {
+            background-color: rgba(144, 144, 144, 0.2);
+        }
+
+        input[type="submit"].alt.icon:before,
+        input[type="reset"].alt.icon:before,
+        input[type="button"].alt.icon:before,
+        button.alt.icon:before,
+        .button.alt.icon:before {
+            color: #bbb;
+        }
+
+    input[type="submit"].special,
+    input[type="reset"].special,
+    input[type="button"].special,
+    button.special,
+    .button.special {
+        background-color: #3498db;
+        color: #fff !important;
+    }
+
+        input[type="submit"].special:hover,
+        input[type="reset"].special:hover,
+        input[type="button"].special:hover,
+        button.special:hover,
+        .button.special:hover {
+            background-color: #4aa3df;
+        }
+
+        input[type="submit"].special:active,
+        input[type="reset"].special:active,
+        input[type="button"].special:active,
+        button.special:active,
+        .button.special:active {
+            background-color: #258cd1;
+        }
+
+/* Form */
+
+form {
+    margin: 0 0 2em 0;
+}
+
+label {
+    display: block;
+    font-size: 0.9em;
+    font-weight: 700;
+    margin: 0 0 1em 0;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
 select,
 textarea {
-    max-width: 280px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    border-radius: 0;
+    border: none;
+    border: solid 1px;
+    color: inherit;
+    display: block;
+    outline: 0;
+    padding: 0 1em;
+    text-decoration: none;
+    width: 100%;
+}
+
+    input[type="text"]:invalid,
+    input[type="password"]:invalid,
+    input[type="email"]:invalid,
+    select:invalid,
+    textarea:invalid {
+        box-shadow: none;
+    }
+
+.select-wrapper {
+    text-decoration: none;
+    display: block;
+    position: relative;
+}
+
+    .select-wrapper:before {
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        font-family: FontAwesome;
+        font-style: normal;
+        font-weight: normal;
+        text-transform: none !important;
+    }
+
+    .select-wrapper:before {
+        content: '\f078';
+        display: block;
+        height: 2.75em;
+        line-height: 2.75em;
+        pointer-events: none;
+        position: absolute;
+        right: 0;
+        text-align: center;
+        top: 0;
+        width: 2.75em;
+    }
+
+    .select-wrapper select::-ms-expand {
+        display: none;
+    }
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select {
+    height: 2.75em;
+}
+
+textarea {
+    padding: 0.75em 1em;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    display: block;
+    float: left;
+    margin-right: -2em;
+    opacity: 0;
+    width: 1em;
+    z-index: -1;
+}
+
+    input[type="checkbox"] + label,
+    input[type="radio"] + label {
+        text-decoration: none;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 1em;
+        font-weight: 300;
+        padding-left: 2.4em;
+        padding-right: 0.75em;
+        position: relative;
+    }
+
+        input[type="checkbox"] + label:before,
+        input[type="radio"] + label:before {
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
+            font-family: FontAwesome;
+            font-style: normal;
+            font-weight: normal;
+            text-transform: none !important;
+        }
+
+        input[type="checkbox"] + label:before,
+        input[type="radio"] + label:before {
+            border-radius: 0;
+            border: solid 1px;
+            content: '';
+            display: inline-block;
+            height: 1.65em;
+            left: 0;
+            line-height: 1.58125em;
+            position: absolute;
+            text-align: center;
+            top: 0;
+            width: 1.65em;
+        }
+
+    input[type="checkbox"]:checked + label:before,
+    input[type="radio"]:checked + label:before {
+        content: '\f00c';
+    }
+
+    input[type="checkbox"] + label:before {
+        border-radius: 0;
+    }
+
+    input[type="radio"] + label:before {
+        border-radius: 100%;
+    }
+
+::-webkit-input-placeholder {
+    opacity: 1.0;
+}
+
+:-moz-placeholder {
+    opacity: 1.0;
+}
+
+::-moz-placeholder {
+    opacity: 1.0;
+}
+
+:-ms-input-placeholder {
+    opacity: 1.0;
+}
+
+.formerize-placeholder {
+    opacity: 1.0;
+}
+
+label {
+    color: #555;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select,
+textarea {
+    background: rgba(144, 144, 144, 0.075);
+    border-color: rgba(144, 144, 144, 0.25);
+}
+
+    input[type="text"]:focus,
+    input[type="password"]:focus,
+    input[type="email"]:focus,
+    select:focus,
+    textarea:focus {
+        border-color: #fff;
+        box-shadow: 0 0 0 1px #fff;
+    }
+
+.select-wrapper:before {
+    color: rgba(144, 144, 144, 0.25);
+}
+
+input[type="checkbox"] + label,
+input[type="radio"] + label {
+    color: #444;
+}
+
+    input[type="checkbox"] + label:before,
+    input[type="radio"] + label:before {
+        background: rgba(144, 144, 144, 0.075);
+        border-color: rgba(144, 144, 144, 0.25);
+    }
+
+input[type="checkbox"]:checked + label:before,
+input[type="radio"]:checked + label:before {
+    background-color: #fff;
+    border-color: #fff;
+    color: #1abc9c;
+}
+
+input[type="checkbox"]:focus + label:before,
+input[type="radio"]:focus + label:before {
+    border-color: #fff;
+    box-shadow: 0 0 0 1px #fff;
+}
+
+::-webkit-input-placeholder {
+    color: #bbb !important;
+}
+
+:-moz-placeholder {
+    color: #bbb !important;
+}
+
+::-moz-placeholder {
+    color: #bbb !important;
+}
+
+:-ms-input-placeholder {
+    color: #bbb !important;
+}
+
+.formerize-placeholder {
+    color: #bbb !important;
+}
+
+/* Icon */
+
+.icon {
+    text-decoration: none;
+    border-bottom: none;
+    position: relative;
+    text-decoration: none !important;
+}
+
+    .icon:before {
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        font-family: FontAwesome;
+        font-style: normal;
+        font-weight: normal;
+        text-transform: none !important;
+    }
+
+    .icon > .label {
+        display: none;
+    }
+
+.hc {
+    height: 2em;
+    width: 4em;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    margin-left: -2em;
+    display: block;
+    border-radius: 90px 90px 0 0;
+    color: #444;
+    background: #fff;
+}
+
+    .hc.up {
+        border-radius: 0 0 90px 90px;
+        top: 0;
+        bottom: initial;
+    }
+
+@media screen and (max-width: 980px) {
+
+    .hc {
+        display: none;
+    }
+}
+
+/* Image */
+
+.image {
+    border: 0;
+    display: inline-block;
+    position: relative;
+}
+
+    .image img {
+        display: block;
+    }
+
+    .image.left, .image.right {
+        max-width: 40%;
+    }
+
+        .image.left img, .image.right img {
+            width: 100%;
+        }
+
+    .image.left {
+        float: left;
+        margin: 0 1.5em 1em 0;
+        top: 0.25em;
+    }
+
+    .image.right {
+        float: right;
+        margin: 0 0 1em 1.5em;
+        top: 0.25em;
+    }
+
+    .image.fit {
+        display: block;
+        margin: 0 0 2em 0;
+        width: 100%;
+    }
+
+        .image.fit img {
+            width: 100%;
+        }
+
+    .image.main {
+        display: block;
+        margin: 0 0 3em 0;
+        width: 100%;
+    }
+
+        .image.main img {
+            width: 100%;
+        }
+
+/* List */
+
+ol {
+    list-style: decimal;
+    margin: 0 0 2em 0;
+    padding-left: 1.25em;
+}
+
+    ol li {
+        padding-left: 0.25em;
+    }
+
+ul {
+    list-style: disc;
+    margin: 0 0 2em 0;
+    padding-left: 1em;
+}
+
+    ul li {
+        padding-left: 0.5em;
+    }
+
+    ul.alt {
+        list-style: none;
+        padding-left: 0;
+    }
+
+        ul.alt li {
+            border-top: solid 1px;
+            padding: 0.5em 0;
+        }
+
+            ul.alt li:first-child {
+                border-top: 0;
+                padding-top: 0;
+            }
+
+    ul.icons {
+        cursor: default;
+        list-style: none;
+        padding-left: 0;
+    }
+
+        ul.icons li {
+            display: inline-block;
+            padding: 0 1em 0 0;
+        }
+
+            ul.icons li:last-child {
+                padding-right: 0;
+            }
+
+            ul.icons li .icon:before {
+                font-size: 2em;
+            }
+
+    ul.actions {
+        cursor: default;
+        list-style: none;
+        padding-left: 0;
+    }
+
+        ul.actions li {
+            display: inline-block;
+            padding: 0 1em 0 0;
+            vertical-align: middle;
+        }
+
+            ul.actions li:last-child {
+                padding-right: 0;
+            }
+
+        ul.actions.small li {
+            padding: 0 0.5em 0 0;
+        }
+
+        ul.actions.vertical li {
+            display: block;
+            padding: 1em 0 0 0;
+        }
+
+            ul.actions.vertical li:first-child {
+                padding-top: 0;
+            }
+
+            ul.actions.vertical li > * {
+                margin-bottom: 0;
+            }
+
+        ul.actions.vertical.small li {
+            padding: 0.5em 0 0 0;
+        }
+
+            ul.actions.vertical.small li:first-child {
+                padding-top: 0;
+            }
+
+        ul.actions.fit {
+            display: table;
+            margin-left: -1em;
+            padding: 0;
+            table-layout: fixed;
+            width: calc(100% + 1em);
+        }
+
+            ul.actions.fit li {
+                display: table-cell;
+                padding: 0 0 0 1em;
+            }
+
+                ul.actions.fit li > * {
+                    margin-bottom: 0;
+                }
+
+            ul.actions.fit.small {
+                margin-left: -0.5em;
+                width: calc(100% + 0.5em);
+            }
+
+                ul.actions.fit.small li {
+                    padding: 0 0 0 0.5em;
+                }
+
+@media screen and (max-width: 480px) {
+
+    ul.actions {
+        margin: 0 0 2em 0;
+    }
+
+        ul.actions li {
+            padding: 1em 0 0 0;
+            display: block;
+            text-align: center;
+            width: 100%;
+        }
+
+            ul.actions li:first-child {
+                padding-top: 0;
+            }
+
+            ul.actions li > * {
+                width: 100%;
+                margin: 0 !important;
+            }
+
+                ul.actions li > *.icon:before {
+                    margin-left: -2em;
+                }
+
+        ul.actions.small li {
+            padding: 0.5em 0 0 0;
+        }
+
+            ul.actions.small li:first-child {
+                padding-top: 0;
+            }
+}
+
+dl {
+    margin: 0 0 2em 0;
+}
+
+    dl dt {
+        display: block;
+        font-weight: 700;
+        margin: 0 0 1em 0;
+    }
+
+    dl dd {
+        margin-left: 2em;
+    }
+
+ul.alt li {
+    border-top-color: rgba(144, 144, 144, 0.25);
+}
+
+/* Banner */
+
+#banner {
+    background-color: #3498db;
+    color: rgba(255, 255, 255, 0.75);
+    text-align: center;
+    cursor: default;
+    padding: 10em 4em 9em 4em;
+    top: 0;
+}
+
+    #banner input, #banner select, #banner textarea {
+        color: #fff;
+    }
+
+    #banner a {
+        color: #fff;
+    }
+
+    #banner strong, #banner b {
+        color: #fff;
+    }
+
+    #banner h1, #banner h2, #banner h3, #banner h4, #banner h5, #banner h6 {
+        color: #fff;
+    }
+
+    #banner blockquote {
+        border-left-color: rgba(255, 255, 255, 0.25);
+    }
+
+    #banner code {
+        background: rgba(255, 255, 255, 0.075);
+        border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    #banner hr {
+        border-bottom-color: rgba(255, 255, 255, 0.25);
+    }
+
+    #banner .box {
+        border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    #banner input[type="submit"],
+    #banner input[type="reset"],
+    #banner input[type="button"],
+    #banner button,
+    #banner .button {
+        background-color: #1abc9c;
+        color: #fff !important;
+    }
+
+        #banner input[type="submit"]:hover,
+        #banner input[type="reset"]:hover,
+        #banner input[type="button"]:hover,
+        #banner button:hover,
+        #banner .button:hover {
+            background-color: #1dd2af;
+        }
+
+        #banner input[type="submit"]:active,
+        #banner input[type="reset"]:active,
+        #banner input[type="button"]:active,
+        #banner button:active,
+        #banner .button:active {
+            background-color: #17a689;
+        }
+
+        #banner input[type="submit"].alt,
+        #banner input[type="reset"].alt,
+        #banner input[type="button"].alt,
+        #banner button.alt,
+        #banner .button.alt {
+            background-color: transparent;
+            box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.25);
+            color: #fff !important;
+        }
+
+            #banner input[type="submit"].alt:hover,
+            #banner input[type="reset"].alt:hover,
+            #banner input[type="button"].alt:hover,
+            #banner button.alt:hover,
+            #banner .button.alt:hover {
+                background-color: rgba(255, 255, 255, 0.075);
+            }
+
+            #banner input[type="submit"].alt:active,
+            #banner input[type="reset"].alt:active,
+            #banner input[type="button"].alt:active,
+            #banner button.alt:active,
+            #banner .button.alt:active {
+                background-color: rgba(255, 255, 255, 0.2);
+            }
+
+            #banner input[type="submit"].alt.icon:before,
+            #banner input[type="reset"].alt.icon:before,
+            #banner input[type="button"].alt.icon:before,
+            #banner button.alt.icon:before,
+            #banner .button.alt.icon:before {
+                color: rgba(255, 255, 255, 0.5);
+            }
+
+        #banner input[type="submit"].special,
+        #banner input[type="reset"].special,
+        #banner input[type="button"].special,
+        #banner button.special,
+        #banner .button.special {
+            background-color: #fff;
+            color: #3498db !important;
+        }
+
+    #banner label {
+        color: #fff;
+    }
+
+    #banner input[type="text"],
+    #banner input[type="password"],
+    #banner input[type="email"],
+    #banner select,
+    #banner textarea {
+        background: rgba(255, 255, 255, 0.075);
+        border-color: rgba(255, 255, 255, 0.25);
+    }
+
+        #banner input[type="text"]:focus,
+        #banner input[type="password"]:focus,
+        #banner input[type="email"]:focus,
+        #banner select:focus,
+        #banner textarea:focus {
+            border-color: #fff;
+            box-shadow: 0 0 0 1px #fff;
+        }
+
+    #banner .select-wrapper:before {
+        color: rgba(255, 255, 255, 0.25);
+    }
+
+    #banner input[type="checkbox"] + label,
+    #banner input[type="radio"] + label {
+        color: rgba(255, 255, 255, 0.75);
+    }
+
+        #banner input[type="checkbox"] + label:before,
+        #banner input[type="radio"] + label:before {
+            background: rgba(255, 255, 255, 0.075);
+            border-color: rgba(255, 255, 255, 0.25);
+        }
+
+    #banner input[type="checkbox"]:checked + label:before,
+    #banner input[type="radio"]:checked + label:before {
+        background-color: #fff;
+        border-color: #fff;
+        color: #3498db;
+    }
+
+    #banner input[type="checkbox"]:focus + label:before,
+    #banner input[type="radio"]:focus + label:before {
+        border-color: #fff;
+        box-shadow: 0 0 0 1px #fff;
+    }
+
+    #banner ::-webkit-input-placeholder {
+        color: rgba(255, 255, 255, 0.5) !important;
+    }
+
+    #banner :-moz-placeholder {
+        color: rgba(255, 255, 255, 0.5) !important;
+    }
+
+    #banner ::-moz-placeholder {
+        color: rgba(255, 255, 255, 0.5) !important;
+    }
+
+    #banner :-ms-input-placeholder {
+        color: rgba(255, 255, 255, 0.5) !important;
+    }
+
+    #banner .formerize-placeholder {
+        color: rgba(255, 255, 255, 0.5) !important;
+    }
+
+    #banner ul.alt li {
+        border-top-color: rgba(255, 255, 255, 0.25);
+    }
+
+    #banner header p {
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+    #banner table tbody tr {
+        border-color: rgba(255, 255, 255, 0.25);
+    }
+
+        #banner table tbody tr:nth-child(2n + 1) {
+            background-color: rgba(255, 255, 255, 0.075);
+        }
+
+    #banner table th {
+        color: #fff;
+    }
+
+    #banner table thead {
+        border-bottom-color: rgba(255, 255, 255, 0.25);
+    }
+
+    #banner table tfoot {
+        border-top-color: rgba(255, 255, 255, 0.25);
+    }
+
+    #banner table.alt tbody tr td {
+        border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    #banner h1 {
+        font-size: 3em;
+        line-height: 1.45;
+        margin: 0 0 0.75em 0;
+    }
+
+    #banner > .inner {
+        opacity: 1;
+        -moz-transform: none;
+        -webkit-transform: none;
+        -ms-transform: none;
+        transform: none;
+        -moz-transition: opacity 1s ease, -moz-transform 1s ease;
+        -webkit-transition: opacity 1s ease, -webkit-transform 1s ease;
+        -ms-transition: opacity 1s ease, -ms-transform 1s ease;
+        transition: opacity 1s ease, transform 1s ease;
+    }
+
+        #banner > .inner > :last-child {
+            margin-bottom: 0;
+        }
+
+body.is-loading #banner > .inner {
+    opacity: 0;
+    -moz-transform: translateY(1em);
+    -webkit-transform: translateY(1em);
+    -ms-transform: translateY(1em);
+    transform: translateY(1em);
+}
+
+@media screen and (max-width: 1280px) {
+
+    #banner h1 {
+        font-size: 2.75em;
+    }
+
+        #banner h1 br {
+            display: none;
+        }
+}
+
+@media screen and (max-width: 736px) {
+
+    #banner {
+        padding: 5em 1.5em 4em 1.5em;
+    }
+
+        #banner h1 {
+            font-size: 2em;
+        }
+}
+
+/* Main */
+
+#main {
+    padding: 4em 0 2em 0;
+}
+
+    #main .inner {
+        max-width: 60em;
+        margin: 0 auto;
+    }
+
+        #main .inner header p {
+            font-size: 1em;
+            font-style: italic;
+            border-top: 1px solid rgba(144, 144, 144, 0.25);
+            border-bottom: 1px solid rgba(144, 144, 144, 0.25);
+            padding: .5em 0;
+        }
+
+@media screen and (max-width: 980px) {
+
+    #main {
+        padding: 3em 0 1em 0;
+    }
+
+        #main .inner {
+            width: 90%;
+        }
+}
+
+.post {
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    -ms-flex-align: stretch;
+    -moz-align-items: stretch;
+    -webkit-align-items: stretch;
+    -ms-align-items: stretch;
+    align-items: stretch;
+    -ms-flex-pack: end;
+    min-height: -webkit-calc(100vh - 4.25em);
+    min-height: -moz-calc(100vh - 4.25em);
+    min-height: calc(100vh - 4.25em);
+    position: relative;
+}
+
+body.is-ie .post {
+    min-height: 0;
+}
+
+.post .content {
+    -moz-transition: background 0.2s ease-in-out;
+    -webkit-transition: background 0.2s ease-in-out;
+    -ms-transition: background 0.2s ease-in-out;
+    transition: background 0.2s ease-in-out;
+    -moz-order: 1;
+    -webkit-order: 1;
+    -ms-order: 1;
+    order: 1;
+    width: 50%;
+    display: block;
+    background: #FFF;
+    padding: 8em;
+    text-align: right;
+    position: relative;
+}
+
+    .post .content:before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+        margin-right: -0.25em;
+        /* Adjusts for spacing */
+    }
+
+    .post .content .inner {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .post .content header h2 {
+        font-size: 2.35em;
+    }
+
+    .post .content header p {
+        font-size: 1em;
+        font-style: italic;
+        border-top: 1px solid rgba(144, 144, 144, 0.25);
+        border-bottom: 1px solid rgba(144, 144, 144, 0.25);
+        padding: .5em 0;
+    }
+
+    .post .content .button {
+        margin: 0;
+    }
+
+    .post .content .postnav {
+        position: absolute;
+        left: 2em;
+        bottom: 2em;
+    }
+
+        .post .content .postnav .prev, .post .content .postnav .next {
+            text-decoration: none;
+            display: block;
+            border: 1px solid rgba(144, 144, 144, 0.25);
+            width: 2em;
+            height: 2em;
+            line-height: 2em;
+            text-align: center;
+        }
+
+            .post .content .postnav .prev:hover, .post .content .postnav .next:hover {
+                background: rgba(144, 144, 144, 0.075);
+            }
+
+            .post .content .postnav .prev.disabled, .post .content .postnav .next.disabled {
+                color: #bbb;
+                pointer-events: none;
+            }
+
+        .post .content .postnav .prev {
+            border-bottom: none;
+        }
+
+.post .image {
+    -ms-flex-order: 2;
+    -moz-order: 2;
+    -webkit-order: 2;
+    -ms-order: 2;
+    order: 2;
+    width: 50%;
+    display: block;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+    background-color: #ffffff;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+    .post .image img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: auto;
+        display: none;
+    }
+
+.post.alt .content {
+    -ms-flex-order: 2;
+    -moz-order: 2;
+    -webkit-order: 2;
+    -ms-order: 2;
+    order: 2;
+    text-align: left;
+}
+
+    .post.alt .content .postnav {
+        right: 2em;
+        left: initial;
+    }
+
+@media screen and (max-width: 1280px) {
+
+    .post.alt .content .postnav {
+        right: 1em;
+    }
+}
+
+.post.alt .image {
+    -ms-flex-order: 1;
+    -moz-order: 1;
+    -webkit-order: 1;
+    -ms-order: 1;
+    order: 1;
+}
+
+    .post.alt .image img {
+        right: initial;
+        left: 0;
+    }
+
+.post.style1 {
+    background-color: #fff;
+    color: #444;
+}
+
+    .post.style1 input, .post.style1 select, .post.style1 textarea {
+        color: #1abc9c;
+    }
+
+    .post.style1 a {
+        color: #1abc9c;
+    }
+
+    .post.style1 strong, .post.style1 b {
+        color: #1abc9c;
+    }
+
+    .post.style1 h1, .post.style1 h2, .post.style1 h3, .post.style1 h4, .post.style1 h5, .post.style1 h6 {
+        color: #1abc9c;
+    }
+
+    .post.style1 blockquote {
+        border-left-color: rgba(144, 144, 144, 0.25);
+    }
+
+    .post.style1 code {
+        background: rgba(144, 144, 144, 0.075);
+        border-color: rgba(144, 144, 144, 0.25);
+    }
+
+    .post.style1 hr {
+        border-bottom-color: rgba(144, 144, 144, 0.25);
+    }
+
+    .post.style1 input[type="submit"],
+    .post.style1 input[type="reset"],
+    .post.style1 input[type="button"],
+    .post.style1 button,
+    .post.style1 .button {
+        background-color: #1abc9c;
+        color: #fff !important;
+    }
+
+        .post.style1 input[type="submit"]:hover,
+        .post.style1 input[type="reset"]:hover,
+        .post.style1 input[type="button"]:hover,
+        .post.style1 button:hover,
+        .post.style1 .button:hover {
+            background-color: #1dd2af;
+        }
+
+        .post.style1 input[type="submit"]:active,
+        .post.style1 input[type="reset"]:active,
+        .post.style1 input[type="button"]:active,
+        .post.style1 button:active,
+        .post.style1 .button:active {
+            background-color: #17a689;
+        }
+
+        .post.style1 input[type="submit"].alt,
+        .post.style1 input[type="reset"].alt,
+        .post.style1 input[type="button"].alt,
+        .post.style1 button.alt,
+        .post.style1 .button.alt {
+            background-color: transparent;
+            box-shadow: inset 0 0 0 2px rgba(144, 144, 144, 0.25);
+            color: #1abc9c !important;
+        }
+
+            .post.style1 input[type="submit"].alt:hover,
+            .post.style1 input[type="reset"].alt:hover,
+            .post.style1 input[type="button"].alt:hover,
+            .post.style1 button.alt:hover,
+            .post.style1 .button.alt:hover {
+                background-color: rgba(144, 144, 144, 0.075);
+            }
+
+            .post.style1 input[type="submit"].alt:active,
+            .post.style1 input[type="reset"].alt:active,
+            .post.style1 input[type="button"].alt:active,
+            .post.style1 button.alt:active,
+            .post.style1 .button.alt:active {
+                background-color: rgba(144, 144, 144, 0.2);
+            }
+
+            .post.style1 input[type="submit"].alt.icon:before,
+            .post.style1 input[type="reset"].alt.icon:before,
+            .post.style1 input[type="button"].alt.icon:before,
+            .post.style1 button.alt.icon:before,
+            .post.style1 .button.alt.icon:before {
+                color: #bbb;
+            }
+
+        .post.style1 input[type="submit"].special,
+        .post.style1 input[type="reset"].special,
+        .post.style1 input[type="button"].special,
+        .post.style1 button.special,
+        .post.style1 .button.special {
+            background-color: #1abc9c;
+            color: #fff !important;
+        }
+
+    .post.style1.invert {
+        background-color: #1abc9c;
+        color: rgba(255, 255, 255, 0.75);
+    }
+
+        .post.style1.invert input, .post.style1.invert select, .post.style1.invert textarea {
+            color: #fff;
+        }
+
+        .post.style1.invert a {
+            color: #fff;
+        }
+
+        .post.style1.invert strong, .post.style1.invert b {
+            color: #fff;
+        }
+
+        .post.style1.invert h1, .post.style1.invert h2, .post.style1.invert h3, .post.style1.invert h4, .post.style1.invert h5, .post.style1.invert h6 {
+            color: #fff;
+        }
+
+        .post.style1.invert blockquote {
+            border-left-color: rgba(255, 255, 255, 0.25);
+        }
+
+        .post.style1.invert code {
+            background: rgba(255, 255, 255, 0.075);
+            border-color: rgba(255, 255, 255, 0.25);
+        }
+
+        .post.style1.invert hr {
+            border-bottom-color: rgba(255, 255, 255, 0.25);
+        }
+
+        .post.style1.invert input[type="submit"],
+        .post.style1.invert input[type="reset"],
+        .post.style1.invert input[type="button"],
+        .post.style1.invert button,
+        .post.style1.invert .button {
+            background-color: #fff;
+            color: #1abc9c !important;
+        }
+
+            .post.style1.invert input[type="submit"].alt,
+            .post.style1.invert input[type="reset"].alt,
+            .post.style1.invert input[type="button"].alt,
+            .post.style1.invert button.alt,
+            .post.style1.invert .button.alt {
+                background-color: transparent;
+                box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.25);
+                color: #fff !important;
+            }
+
+                .post.style1.invert input[type="submit"].alt:hover,
+                .post.style1.invert input[type="reset"].alt:hover,
+                .post.style1.invert input[type="button"].alt:hover,
+                .post.style1.invert button.alt:hover,
+                .post.style1.invert .button.alt:hover {
+                    background-color: rgba(255, 255, 255, 0.075);
+                }
+
+                .post.style1.invert input[type="submit"].alt:active,
+                .post.style1.invert input[type="reset"].alt:active,
+                .post.style1.invert input[type="button"].alt:active,
+                .post.style1.invert button.alt:active,
+                .post.style1.invert .button.alt:active {
+                    background-color: rgba(255, 255, 255, 0.2);
+                }
+
+                .post.style1.invert input[type="submit"].alt.icon:before,
+                .post.style1.invert input[type="reset"].alt.icon:before,
+                .post.style1.invert input[type="button"].alt.icon:before,
+                .post.style1.invert button.alt.icon:before,
+                .post.style1.invert .button.alt.icon:before {
+                    color: rgba(255, 255, 255, 0.5);
+                }
+
+            .post.style1.invert input[type="submit"].special,
+            .post.style1.invert input[type="reset"].special,
+            .post.style1.invert input[type="button"].special,
+            .post.style1.invert button.special,
+            .post.style1.invert .button.special {
+                background-color: #fff;
+                color: #1abc9c !important;
+            }
+
+        .post.style1.invert .content {
+            background: #1abc9c;
+        }
+
+            .post.style1.invert .content header p {
+                color: rgba(255, 255, 255, 0.5);
+                border-top: 1px solid rgba(255, 255, 255, 0.25);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+            }
+
+            .post.style1.invert .content .postnav .prev, .post.style1.invert .content .postnav .next {
+                border: 1px solid rgba(255, 255, 255, 0.25);
+            }
+
+                .post.style1.invert .content .postnav .prev:hover, .post.style1.invert .content .postnav .next:hover {
+                    background: rgba(255, 255, 255, 0.075);
+                }
+
+                .post.style1.invert .content .postnav .prev.disabled, .post.style1.invert .content .postnav .next.disabled {
+                    color: rgba(255, 255, 255, 0.5);
+                }
+
+        .post.style1.invert .image {
+            background-color: #1abc9c;
+        }
+
+.post.style2 {
+    background-color: #fff;
+    color: #444;
+}
+
+    .post.style2 input, .post.style2 select, .post.style2 textarea {
+        color: #3498db;
+    }
+
+    .post.style2 a {
+        color: #3498db;
+    }
+
+    .post.style2 strong, .post.style2 b {
+        color: #3498db;
+    }
+
+    .post.style2 h1, .post.style2 h2, .post.style2 h3, .post.style2 h4, .post.style2 h5, .post.style2 h6 {
+        color: #3498db;
+    }
+
+    .post.style2 blockquote {
+        border-left-color: rgba(144, 144, 144, 0.25);
+    }
+
+    .post.style2 code {
+        background: rgba(144, 144, 144, 0.075);
+        border-color: rgba(144, 144, 144, 0.25);
+    }
+
+    .post.style2 hr {
+        border-bottom-color: rgba(144, 144, 144, 0.25);
+    }
+
+    .post.style2 input[type="submit"],
+    .post.style2 input[type="reset"],
+    .post.style2 input[type="button"],
+    .post.style2 button,
+    .post.style2 .button {
+        background-color: #1abc9c;
+        color: #fff !important;
+    }
+
+        .post.style2 input[type="submit"]:hover,
+        .post.style2 input[type="reset"]:hover,
+        .post.style2 input[type="button"]:hover,
+        .post.style2 button:hover,
+        .post.style2 .button:hover {
+            background-color: #1dd2af;
+        }
+
+        .post.style2 input[type="submit"]:active,
+        .post.style2 input[type="reset"]:active,
+        .post.style2 input[type="button"]:active,
+        .post.style2 button:active,
+        .post.style2 .button:active {
+            background-color: #17a689;
+        }
+
+        .post.style2 input[type="submit"].alt,
+        .post.style2 input[type="reset"].alt,
+        .post.style2 input[type="button"].alt,
+        .post.style2 button.alt,
+        .post.style2 .button.alt {
+            background-color: transparent;
+            box-shadow: inset 0 0 0 2px rgba(144, 144, 144, 0.25);
+            color: #3498db !important;
+        }
+
+            .post.style2 input[type="submit"].alt:hover,
+            .post.style2 input[type="reset"].alt:hover,
+            .post.style2 input[type="button"].alt:hover,
+            .post.style2 button.alt:hover,
+            .post.style2 .button.alt:hover {
+                background-color: rgba(144, 144, 144, 0.075);
+            }
+
+            .post.style2 input[type="submit"].alt:active,
+            .post.style2 input[type="reset"].alt:active,
+            .post.style2 input[type="button"].alt:active,
+            .post.style2 button.alt:active,
+            .post.style2 .button.alt:active {
+                background-color: rgba(144, 144, 144, 0.2);
+            }
+
+            .post.style2 input[type="submit"].alt.icon:before,
+            .post.style2 input[type="reset"].alt.icon:before,
+            .post.style2 input[type="button"].alt.icon:before,
+            .post.style2 button.alt.icon:before,
+            .post.style2 .button.alt.icon:before {
+                color: #bbb;
+            }
+
+        .post.style2 input[type="submit"].special,
+        .post.style2 input[type="reset"].special,
+        .post.style2 input[type="button"].special,
+        .post.style2 button.special,
+        .post.style2 .button.special {
+            background-color: #3498db;
+            color: #fff !important;
+        }
+
+    .post.style2.invert {
+        background-color: #3498db;
+        color: rgba(255, 255, 255, 0.75);
+    }
+
+        .post.style2.invert input, .post.style2.invert select, .post.style2.invert textarea {
+            color: #fff;
+        }
+
+        .post.style2.invert a {
+            color: #fff;
+        }
+
+        .post.style2.invert strong, .post.style2.invert b {
+            color: #fff;
+        }
+
+        .post.style2.invert h1, .post.style2.invert h2, .post.style2.invert h3, .post.style2.invert h4, .post.style2.invert h5, .post.style2.invert h6 {
+            color: #fff;
+        }
+
+        .post.style2.invert blockquote {
+            border-left-color: rgba(255, 255, 255, 0.25);
+        }
+
+        .post.style2.invert code {
+            background: rgba(255, 255, 255, 0.075);
+            border-color: rgba(255, 255, 255, 0.25);
+        }
+
+        .post.style2.invert hr {
+            border-bottom-color: rgba(255, 255, 255, 0.25);
+        }
+
+        .post.style2.invert input[type="submit"],
+        .post.style2.invert input[type="reset"],
+        .post.style2.invert input[type="button"],
+        .post.style2.invert button,
+        .post.style2.invert .button {
+            background-color: #1abc9c;
+            color: #fff !important;
+        }
+
+            .post.style2.invert input[type="submit"]:hover,
+            .post.style2.invert input[type="reset"]:hover,
+            .post.style2.invert input[type="button"]:hover,
+            .post.style2.invert button:hover,
+            .post.style2.invert .button:hover {
+                background-color: #1dd2af;
+            }
+
+            .post.style2.invert input[type="submit"]:active,
+            .post.style2.invert input[type="reset"]:active,
+            .post.style2.invert input[type="button"]:active,
+            .post.style2.invert button:active,
+            .post.style2.invert .button:active {
+                background-color: #17a689;
+            }
+
+            .post.style2.invert input[type="submit"].alt,
+            .post.style2.invert input[type="reset"].alt,
+            .post.style2.invert input[type="button"].alt,
+            .post.style2.invert button.alt,
+            .post.style2.invert .button.alt {
+                background-color: transparent;
+                box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.25);
+                color: #fff !important;
+            }
+
+                .post.style2.invert input[type="submit"].alt:hover,
+                .post.style2.invert input[type="reset"].alt:hover,
+                .post.style2.invert input[type="button"].alt:hover,
+                .post.style2.invert button.alt:hover,
+                .post.style2.invert .button.alt:hover {
+                    background-color: rgba(255, 255, 255, 0.075);
+                }
+
+                .post.style2.invert input[type="submit"].alt:active,
+                .post.style2.invert input[type="reset"].alt:active,
+                .post.style2.invert input[type="button"].alt:active,
+                .post.style2.invert button.alt:active,
+                .post.style2.invert .button.alt:active {
+                    background-color: rgba(255, 255, 255, 0.2);
+                }
+
+                .post.style2.invert input[type="submit"].alt.icon:before,
+                .post.style2.invert input[type="reset"].alt.icon:before,
+                .post.style2.invert input[type="button"].alt.icon:before,
+                .post.style2.invert button.alt.icon:before,
+                .post.style2.invert .button.alt.icon:before {
+                    color: rgba(255, 255, 255, 0.5);
+                }
+
+            .post.style2.invert input[type="submit"].special,
+            .post.style2.invert input[type="reset"].special,
+            .post.style2.invert input[type="button"].special,
+            .post.style2.invert button.special,
+            .post.style2.invert .button.special {
+                background-color: #fff;
+                color: #3498db !important;
+            }
+
+        .post.style2.invert .content {
+            background: #3498db;
+        }
+
+            .post.style2.invert .content header p {
+                color: rgba(255, 255, 255, 0.5);
+                border-top: 1px solid rgba(255, 255, 255, 0.25);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+            }
+
+            .post.style2.invert .content .postnav .prev, .post.style2.invert .content .postnav .next {
+                border: 1px solid rgba(255, 255, 255, 0.25);
+            }
+
+                .post.style2.invert .content .postnav .prev:hover, .post.style2.invert .content .postnav .next:hover {
+                    background: rgba(255, 255, 255, 0.075);
+                }
+
+                .post.style2.invert .content .postnav .prev.disabled, .post.style2.invert .content .postnav .next.disabled {
+                    color: rgba(255, 255, 255, 0.5);
+                }
+
+        .post.style2.invert .image {
+            background-color: #3498db;
+        }
+
+.post.style3 {
+    background-color: #fff;
+    color: #444;
+}
+
+    .post.style3 input, .post.style3 select, .post.style3 textarea {
+        color: #9b59b6;
+    }
+
+    .post.style3 a {
+        color: #9b59b6;
+    }
+
+    .post.style3 strong, .post.style3 b {
+        color: #9b59b6;
+    }
+
+    .post.style3 h1, .post.style3 h2, .post.style3 h3, .post.style3 h4, .post.style3 h5, .post.style3 h6 {
+        color: #9b59b6;
+    }
+
+    .post.style3 blockquote {
+        border-left-color: rgba(144, 144, 144, 0.25);
+    }
+
+    .post.style3 code {
+        background: rgba(144, 144, 144, 0.075);
+        border-color: rgba(144, 144, 144, 0.25);
+    }
+
+    .post.style3 hr {
+        border-bottom-color: rgba(144, 144, 144, 0.25);
+    }
+
+    .post.style3 input[type="submit"],
+    .post.style3 input[type="reset"],
+    .post.style3 input[type="button"],
+    .post.style3 button,
+    .post.style3 .button {
+        background-color: #1abc9c;
+        color: #fff !important;
+    }
+
+        .post.style3 input[type="submit"]:hover,
+        .post.style3 input[type="reset"]:hover,
+        .post.style3 input[type="button"]:hover,
+        .post.style3 button:hover,
+        .post.style3 .button:hover {
+            background-color: #1dd2af;
+        }
+
+        .post.style3 input[type="submit"]:active,
+        .post.style3 input[type="reset"]:active,
+        .post.style3 input[type="button"]:active,
+        .post.style3 button:active,
+        .post.style3 .button:active {
+            background-color: #17a689;
+        }
+
+        .post.style3 input[type="submit"].alt,
+        .post.style3 input[type="reset"].alt,
+        .post.style3 input[type="button"].alt,
+        .post.style3 button.alt,
+        .post.style3 .button.alt {
+            background-color: transparent;
+            box-shadow: inset 0 0 0 2px rgba(144, 144, 144, 0.25);
+            color: #9b59b6 !important;
+        }
+
+            .post.style3 input[type="submit"].alt:hover,
+            .post.style3 input[type="reset"].alt:hover,
+            .post.style3 input[type="button"].alt:hover,
+            .post.style3 button.alt:hover,
+            .post.style3 .button.alt:hover {
+                background-color: rgba(144, 144, 144, 0.075);
+            }
+
+            .post.style3 input[type="submit"].alt:active,
+            .post.style3 input[type="reset"].alt:active,
+            .post.style3 input[type="button"].alt:active,
+            .post.style3 button.alt:active,
+            .post.style3 .button.alt:active {
+                background-color: rgba(144, 144, 144, 0.2);
+            }
+
+            .post.style3 input[type="submit"].alt.icon:before,
+            .post.style3 input[type="reset"].alt.icon:before,
+            .post.style3 input[type="button"].alt.icon:before,
+            .post.style3 button.alt.icon:before,
+            .post.style3 .button.alt.icon:before {
+                color: #bbb;
+            }
+
+        .post.style3 input[type="submit"].special,
+        .post.style3 input[type="reset"].special,
+        .post.style3 input[type="button"].special,
+        .post.style3 button.special,
+        .post.style3 .button.special {
+            background-color: #9b59b6;
+            color: #fff !important;
+        }
+
+    .post.style3.invert {
+        background-color: #9b59b6;
+        color: rgba(255, 255, 255, 0.75);
+    }
+
+        .post.style3.invert input, .post.style3.invert select, .post.style3.invert textarea {
+            color: #fff;
+        }
+
+        .post.style3.invert a {
+            color: #fff;
+        }
+
+        .post.style3.invert strong, .post.style3.invert b {
+            color: #fff;
+        }
+
+        .post.style3.invert h1, .post.style3.invert h2, .post.style3.invert h3, .post.style3.invert h4, .post.style3.invert h5, .post.style3.invert h6 {
+            color: #fff;
+        }
+
+        .post.style3.invert blockquote {
+            border-left-color: rgba(255, 255, 255, 0.25);
+        }
+
+        .post.style3.invert code {
+            background: rgba(255, 255, 255, 0.075);
+            border-color: rgba(255, 255, 255, 0.25);
+        }
+
+        .post.style3.invert hr {
+            border-bottom-color: rgba(255, 255, 255, 0.25);
+        }
+
+        .post.style3.invert input[type="submit"],
+        .post.style3.invert input[type="reset"],
+        .post.style3.invert input[type="button"],
+        .post.style3.invert button,
+        .post.style3.invert .button {
+            background-color: #1abc9c;
+            color: #fff !important;
+        }
+
+            .post.style3.invert input[type="submit"]:hover,
+            .post.style3.invert input[type="reset"]:hover,
+            .post.style3.invert input[type="button"]:hover,
+            .post.style3.invert button:hover,
+            .post.style3.invert .button:hover {
+                background-color: #1dd2af;
+            }
+
+            .post.style3.invert input[type="submit"]:active,
+            .post.style3.invert input[type="reset"]:active,
+            .post.style3.invert input[type="button"]:active,
+            .post.style3.invert button:active,
+            .post.style3.invert .button:active {
+                background-color: #17a689;
+            }
+
+            .post.style3.invert input[type="submit"].alt,
+            .post.style3.invert input[type="reset"].alt,
+            .post.style3.invert input[type="button"].alt,
+            .post.style3.invert button.alt,
+            .post.style3.invert .button.alt {
+                background-color: transparent;
+                box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.25);
+                color: #fff !important;
+            }
+
+                .post.style3.invert input[type="submit"].alt:hover,
+                .post.style3.invert input[type="reset"].alt:hover,
+                .post.style3.invert input[type="button"].alt:hover,
+                .post.style3.invert button.alt:hover,
+                .post.style3.invert .button.alt:hover {
+                    background-color: rgba(255, 255, 255, 0.075);
+                }
+
+                .post.style3.invert input[type="submit"].alt:active,
+                .post.style3.invert input[type="reset"].alt:active,
+                .post.style3.invert input[type="button"].alt:active,
+                .post.style3.invert button.alt:active,
+                .post.style3.invert .button.alt:active {
+                    background-color: rgba(255, 255, 255, 0.2);
+                }
+
+                .post.style3.invert input[type="submit"].alt.icon:before,
+                .post.style3.invert input[type="reset"].alt.icon:before,
+                .post.style3.invert input[type="button"].alt.icon:before,
+                .post.style3.invert button.alt.icon:before,
+                .post.style3.invert .button.alt.icon:before {
+                    color: rgba(255, 255, 255, 0.5);
+                }
+
+            .post.style3.invert input[type="submit"].special,
+            .post.style3.invert input[type="reset"].special,
+            .post.style3.invert input[type="button"].special,
+            .post.style3.invert button.special,
+            .post.style3.invert .button.special {
+                background-color: #fff;
+                color: #9b59b6 !important;
+            }
+
+        .post.style3.invert .content {
+            background: #9b59b6;
+        }
+
+            .post.style3.invert .content header p {
+                color: rgba(255, 255, 255, 0.5);
+                border-top: 1px solid rgba(255, 255, 255, 0.25);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+            }
+
+            .post.style3.invert .content .postnav .prev, .post.style3.invert .content .postnav .next {
+                border: 1px solid rgba(255, 255, 255, 0.25);
+            }
+
+                .post.style3.invert .content .postnav .prev:hover, .post.style3.invert .content .postnav .next:hover {
+                    background: rgba(255, 255, 255, 0.075);
+                }
+
+                .post.style3.invert .content .postnav .prev.disabled, .post.style3.invert .content .postnav .next.disabled {
+                    color: rgba(255, 255, 255, 0.5);
+                }
+
+        .post.style3.invert .image {
+            background-color: #9b59b6;
+        }
+
+@media screen and (max-width: 1280px) {
+
+    .post .content {
+        padding: 4em;
+    }
+
+        .post .content .postnav {
+            left: 1em;
+            bottom: 1em;
+        }
+}
+
+@media screen and (max-width: 980px) {
+
+    .post {
+        -ms-flex-direction: column;
+        -moz-flex-direction: column;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        height: auto;
+        min-height: 0;
+    }
+
+        .post .image {
+            -ms-flex-order: 1;
+            -moz-order: 1;
+            -webkit-order: 1;
+            -ms-order: 1;
+            order: 1;
+            width: 100%;
+            overflow: auto;
+            background: none !important;
+        }
+
+            .post .image img {
+                position: relative;
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+
+        .post .content {
+            -ms-flex-order: 2;
+            -moz-order: 2;
+            -webkit-order: 2;
+            -ms-order: 2;
+            order: 2;
+            width: 100%;
+            text-align: left;
+        }
+
+            .post .content .postnav {
+                display: none;
+            }
+
+        .post.alt .image img {
+            left: initial;
+        }
+
+        .post.alt .content {
+            text-align: left;
+        }
+}
+
+@media screen and (max-width: 736px) {
+
+    .post .content {
+        padding: 2em 1.5em 3em 1.5em;
+    }
+
+        .post .content header h2 {
+            font-size: 1.75em;
+        }
+
+    .post .button {
+        width: 100%;
+    }
 }
