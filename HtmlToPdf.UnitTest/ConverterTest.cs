@@ -94,8 +94,8 @@ namespace HtmlToPdf.UnitTest
 
             var pdfReader = new PdfReader(pdfFile);
             var firstPdfPage = pdfReader.GetPageSize(1);
-            firstPdfPage.Width.ShouldBe(2953);
-            firstPdfPage.Height.ShouldBe(4169);
+            firstPdfPage.Width.ShouldBe(709);
+            firstPdfPage.Height.ShouldBe(1002);
         }
     }
 }
