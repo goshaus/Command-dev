@@ -9,6 +9,7 @@ namespace HtmlToPdf.Lib
     {
         private readonly SelectPdf.HtmlToPdf _internalConverter;
         private const char MarginValuesSeparator = ' ';
+        private const int MarginValuesAmount = 4;
 
         public HtmlToPdfConverter()
         {
@@ -25,10 +26,16 @@ namespace HtmlToPdf.Lib
 
         public Stream ConvertToPdfAsStream(HtmlToPdfSettings settings, string htmlString)
         {
+            if (settings == null)
+                throw new ArgumentNullException("settings", "Pdf settings is null");
+            if (string.IsNullOrEmpty(htmlString))
+                throw new ArgumentNullException("htmlString", "Source html is empty");
+
             ApplyUserSettings(settings);
 
             var pdfContainer = _internalConverter.ConvertHtmlString(htmlString);
             var pdfStream = new MemoryStream();
+
             pdfContainer.Save(pdfStream);
 
             return pdfStream;
@@ -37,6 +44,8 @@ namespace HtmlToPdf.Lib
         private void ApplyUserSettings(HtmlToPdfSettings settings)
         {
             var pdfMargin = settings.Margin.Split(MarginValuesSeparator);
+            if (pdfMargin.Length != MarginValuesAmount)
+                throw new FormatException("Margin field should contains 4 values");
 
             _internalConverter.Options.MarginTop = Convert.ToInt32(pdfMargin[0]);
             _internalConverter.Options.MarginRight = Convert.ToInt32(pdfMargin[1]);
