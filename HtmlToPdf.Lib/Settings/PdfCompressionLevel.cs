@@ -2,8 +2,8 @@
 {
     public enum PdfCompressionLevel
     {
-        Low,
+        NoCompression,
         Normal,
-        High
+        Best
     }
 }

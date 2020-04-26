@@ -2,7 +2,7 @@
 {
     public enum PdfPageOrientation
     {
-        Vartical,
-        Horizontal
+        Portrait,
+        Landscape
     }
 }
