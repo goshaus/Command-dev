@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HtmlToPdf.Lib", "HtmlToPdf.Lib.csproj", "{118200FC-48FD-482F-80E5-F783056D721B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HtmlToPdf.Lib", "HtmlToPdf.Lib\HtmlToPdf.Lib.csproj", "{118200FC-48FD-482F-80E5-F783056D721B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "..\UnitTests\UnitTests.csproj", "{019EB513-77D1-4B88-8BAA-FE93B9275C83}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HtmlToPdf.Web", "HtmlToPdf.Web\HtmlToPdf.Web.csproj", "{DCDE4241-7DD3-44DF-BF49-91830426B37F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HtmlToPdf.Web", "..\HtmlToPdf.Web\HtmlToPdf.Web.csproj", "{DCDE4241-7DD3-44DF-BF49-91830426B37F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HtmlToPdf.UnitTest", "HtmlToPdf.UnitTest\HtmlToPdf.UnitTest.csproj", "{D45FF5C5-334B-468A-856E-2AA506DF0616}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,14 +19,14 @@ Global
 		{118200FC-48FD-482F-80E5-F783056D721B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{118200FC-48FD-482F-80E5-F783056D721B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{118200FC-48FD-482F-80E5-F783056D721B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{019EB513-77D1-4B88-8BAA-FE93B9275C83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{019EB513-77D1-4B88-8BAA-FE93B9275C83}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{019EB513-77D1-4B88-8BAA-FE93B9275C83}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{019EB513-77D1-4B88-8BAA-FE93B9275C83}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DCDE4241-7DD3-44DF-BF49-91830426B37F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DCDE4241-7DD3-44DF-BF49-91830426B37F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCDE4241-7DD3-44DF-BF49-91830426B37F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DCDE4241-7DD3-44DF-BF49-91830426B37F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D45FF5C5-334B-468A-856E-2AA506DF0616}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D45FF5C5-334B-468A-856E-2AA506DF0616}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D45FF5C5-334B-468A-856E-2AA506DF0616}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D45FF5C5-334B-468A-856E-2AA506DF0616}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
