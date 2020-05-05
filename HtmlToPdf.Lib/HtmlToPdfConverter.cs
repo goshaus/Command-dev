@@ -5,17 +5,29 @@ using SelectPdf;
 
 namespace HtmlToPdf.Lib
 {
-    public class HtmlToPdfConverter
+    /// <summary>
+    /// Converter used to generate html based pdf file.
+    /// </summary>
+    public class HtmlToPdfConverter : IHtmlToPdfConverter
     {
         private readonly SelectPdf.HtmlToPdf _internalConverter;
         private const char MarginValuesSeparator = ' ';
         private const int MarginValuesAmount = 4;
 
+        /// <summary>
+        /// Initializes an instance of the HtmlToPdfConverter.
+        /// </summary>
         public HtmlToPdfConverter()
         {
             _internalConverter = new SelectPdf.HtmlToPdf();
         }
 
+        /// <summary>
+        /// Generate pdf from html string with custom settings.
+        /// </summary>
+        /// <param name="settings">Pdf convertation settings</param>
+        /// <param name="htmlString"></param>
+        /// <returns>Pdf data is an byte array.</returns>
         public byte[] ConvertToPdfAsArray(HtmlToPdfSettings settings, string htmlString)
         {
             using (var pdfStream = (MemoryStream)ConvertToPdfAsStream(settings, htmlString))
@@ -24,6 +36,13 @@ namespace HtmlToPdf.Lib
             }
         }
 
+
+        /// <summary>
+        /// Generate pdf from html string with custom settings.
+        /// </summary>
+        /// <param name="settings">Pdf convertation settings</param>
+        /// <param name="htmlString"></param>
+        /// <returns>Pdf data is an memory stream.</returns>
         public Stream ConvertToPdfAsStream(HtmlToPdfSettings settings, string htmlString)
         {
             if (settings == null)
@@ -41,16 +60,23 @@ namespace HtmlToPdf.Lib
             return pdfStream;
         }
 
+        /// <summary>
+        /// Apply user settings to internal converter settings
+        /// </summary>
+        /// <param name="settings">Pdf convertation settings</param>
         private void ApplyUserSettings(HtmlToPdfSettings settings)
         {
-            var pdfMargin = settings.Margin.Split(MarginValuesSeparator);
-            if (pdfMargin.Length != MarginValuesAmount)
-                throw new FormatException("Margin field should contains 4 values");
+            if (settings.Margin != null)
+            {
+                var pdfMargin = settings.Margin.Split(MarginValuesSeparator);
+                if (pdfMargin.Length != MarginValuesAmount)
+                    throw new FormatException("Margin field should contains 4 values");
 
-            _internalConverter.Options.MarginTop = Convert.ToInt32(pdfMargin[0]);
-            _internalConverter.Options.MarginRight = Convert.ToInt32(pdfMargin[1]);
-            _internalConverter.Options.MarginBottom = Convert.ToInt32(pdfMargin[2]);
-            _internalConverter.Options.MarginLeft = Convert.ToInt32(pdfMargin[3]);
+                _internalConverter.Options.MarginTop = Convert.ToInt32(pdfMargin[0]);
+                _internalConverter.Options.MarginRight = Convert.ToInt32(pdfMargin[1]);
+                _internalConverter.Options.MarginBottom = Convert.ToInt32(pdfMargin[2]);
+                _internalConverter.Options.MarginLeft = Convert.ToInt32(pdfMargin[3]);
+            }
 
             _internalConverter.Options.PdfStandard = (PdfStandard)Enum.Parse(typeof(PdfStandard), settings.Standart.ToString());
             _internalConverter.Options.PdfPageSize = (SelectPdf.PdfPageSize)Enum.Parse(typeof(SelectPdf.PdfPageSize),

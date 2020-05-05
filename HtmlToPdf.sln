@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HtmlToPdf.Web", "HtmlToPdf.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HtmlToPdf.UnitTest", "HtmlToPdf.UnitTest\HtmlToPdf.UnitTest.csproj", "{D45FF5C5-334B-468A-856E-2AA506DF0616}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HtmlToPdf.Documentation", "HtmlToPdf.Documentation\HtmlToPdf.Documentation.csproj", "{372CA9DE-86F3-4E5B-827C-E5BE38D91E93}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{D45FF5C5-334B-468A-856E-2AA506DF0616}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D45FF5C5-334B-468A-856E-2AA506DF0616}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D45FF5C5-334B-468A-856E-2AA506DF0616}.Release|Any CPU.Build.0 = Release|Any CPU
+		{372CA9DE-86F3-4E5B-827C-E5BE38D91E93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{372CA9DE-86F3-4E5B-827C-E5BE38D91E93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{372CA9DE-86F3-4E5B-827C-E5BE38D91E93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{372CA9DE-86F3-4E5B-827C-E5BE38D91E93}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
