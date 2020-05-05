@@ -1,0 +1,69 @@
+﻿@model HtmlToPdf.Web.Models.Convert.ConvertViewModel
+
+<section id="banner">
+    <div class="inner">
+        <h1>Html To Pdf converter</h1>
+        <ul class="actions">
+            <li><a href="#converter" class="button alt scrolly big">Let's start</a></li>
+        </ul>
+    </div>
+</section>
+
+<article id="converter" class="post style1">
+    @using (Html.BeginForm("Index", "Convert", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div class="row">
+            <div class="content">
+                <div class="inner">
+                    <div class="form-group main-cont">
+                        <label for="exampleInputEmail1">Choose html file on your PC</label>
+                        <input type="file" class="form-control" id="HtmlFile" name="HtmlFile" aria-describedby="fileHelp" placeholder="Enter email">
+                        <small id="fileHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="content col-md-5">
+                <div class="inner">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Margin</label>
+                        @Html.TextBoxFor(m => m.Settings.Margin)
+                        @Html.ValidationMessageFor(m => m.Settings.Margin)
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Page size</label>
+                        @Html.EnumDropDownListFor(m => m.Settings.PageSize)
+                        @Html.ValidationMessageFor(m => m.Settings.PageSize)
+                        <small class="form-text text-muted">This option controls the size of the generated document pages</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Page orientation</label>
+                        @Html.EnumDropDownListFor(m => m.Settings.PageOrientation)
+                        @Html.ValidationMessageFor(m => m.Settings.PageOrientation)
+                        <small class="form-text text-muted">This option controls the page orientation of the generated pdf document pages</small>
+                    </div>
+                </div>
+            </div>
+            <div class="content col-md-5">
+                <div class="inner">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Compression level</label>
+                        @Html.EnumDropDownListFor(m => m.Settings.CompressionLevel)
+                        @Html.ValidationMessageFor(m => m.Settings.CompressionLevel)
+                        <small class="form-text text-muted">This option controls the compression level of the generated pdf document</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Pdf standart</label>
+                        @Html.EnumDropDownListFor(m => m.Settings.Standart)
+                        @Html.ValidationMessageFor(m => m.Settings.Standart)
+                        <small class="form-text text-muted">Defines the pdf standard used by the generated pdf document</small>
+                    </div>
+                    <div class="main-cont">
+                        <button type="submit" class="btn btn-primary">Start convertation</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</article>

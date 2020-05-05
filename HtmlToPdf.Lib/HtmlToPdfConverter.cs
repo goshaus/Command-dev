@@ -5,7 +5,7 @@ using SelectPdf;
 
 namespace HtmlToPdf.Lib
 {
-    public class HtmlToPdfConverter
+    public class HtmlToPdfConverter : IHtmlToPdfConverter
     {
         private readonly SelectPdf.HtmlToPdf _internalConverter;
         private const char MarginValuesSeparator = ' ';

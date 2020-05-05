@@ -992,6 +992,7 @@ ul.alt li {
     cursor: default;
     padding: 10em 4em 9em 4em;
     top: 0;
+    height: 100%;
 }
 
     #banner input, #banner select, #banner textarea {
@@ -1251,6 +1252,10 @@ body.is-loading #banner > .inner {
 
 /* Main */
 
+.main-cont {
+    width: 100%;
+}
+
 #main {
     padding: 4em 0 2em 0;
 }
@@ -1295,6 +1300,7 @@ body.is-loading #banner > .inner {
     min-height: -moz-calc(100vh - 4.25em);
     min-height: calc(100vh - 4.25em);
     position: relative;
+    padding-top: 2em;
 }
 
 body.is-ie .post {
@@ -1313,9 +1319,9 @@ body.is-ie .post {
     width: 50%;
     display: block;
     background: #FFF;
-    padding: 8em;
     text-align: right;
     position: relative;
+    padding-left: 4em;
 }
 
     .post .content:before {
@@ -1444,6 +1450,7 @@ body.is-ie .post {
 
     .post.style1 input, .post.style1 select, .post.style1 textarea {
         color: #1abc9c;
+        width: 100%;
     }
 
     .post.style1 a {
@@ -2114,7 +2121,7 @@ body.is-ie .post {
 @media screen and (max-width: 1280px) {
 
     .post .content {
-        padding: 4em;
+        padding: 0em;
     }
 
         .post .content .postnav {
