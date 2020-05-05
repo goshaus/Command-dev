@@ -43,14 +43,17 @@ namespace HtmlToPdf.Lib
 
         private void ApplyUserSettings(HtmlToPdfSettings settings)
         {
-            var pdfMargin = settings.Margin.Split(MarginValuesSeparator);
-            if (pdfMargin.Length != MarginValuesAmount)
-                throw new FormatException("Margin field should contains 4 values");
+            if (settings.Margin != null)
+            {
+                var pdfMargin = settings.Margin.Split(MarginValuesSeparator);
+                if (pdfMargin.Length != MarginValuesAmount)
+                    throw new FormatException("Margin field should contains 4 values");
 
-            _internalConverter.Options.MarginTop = Convert.ToInt32(pdfMargin[0]);
-            _internalConverter.Options.MarginRight = Convert.ToInt32(pdfMargin[1]);
-            _internalConverter.Options.MarginBottom = Convert.ToInt32(pdfMargin[2]);
-            _internalConverter.Options.MarginLeft = Convert.ToInt32(pdfMargin[3]);
+                _internalConverter.Options.MarginTop = Convert.ToInt32(pdfMargin[0]);
+                _internalConverter.Options.MarginRight = Convert.ToInt32(pdfMargin[1]);
+                _internalConverter.Options.MarginBottom = Convert.ToInt32(pdfMargin[2]);
+                _internalConverter.Options.MarginLeft = Convert.ToInt32(pdfMargin[3]);
+            }
 
             _internalConverter.Options.PdfStandard = (PdfStandard)Enum.Parse(typeof(PdfStandard), settings.Standart.ToString());
             _internalConverter.Options.PdfPageSize = (SelectPdf.PdfPageSize)Enum.Parse(typeof(SelectPdf.PdfPageSize),

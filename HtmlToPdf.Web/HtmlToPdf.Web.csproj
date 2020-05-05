@@ -141,6 +141,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\PdfResult.cs" />
     <Compile Include="Models\Convert\ConvertViewModel.cs" />
     <Compile Include="Models\Convert\SettingsViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
