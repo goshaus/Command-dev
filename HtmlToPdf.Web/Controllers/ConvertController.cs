@@ -1,10 +1,8 @@
 ﻿using HtmlToPdf.Lib;
 using HtmlToPdf.Lib.Settings;
 using HtmlToPdf.Web.Models.Convert;
-using System.Web;
 using System.Web.Mvc;
 using System;
-using System.IO;
 using HtmlToPdf.Web.Infrastructure;
 
 namespace HtmlToPdf.Web.Controllers
@@ -31,9 +29,16 @@ namespace HtmlToPdf.Web.Controllers
             if (model.HtmlFile.ContentLength > MaxFileSize)
                 throw new ApplicationException($"Invalid file size (max {MaxFileSize} Mb)");
 
-            var settings = MapToConverterSettings(model.Settings, model.HtmlFile.FileName);
+            try
+            {
+                var settings = MapToConverterSettings(model.Settings, model.HtmlFile.FileName);
 
-            return new PdfResult(_converter, model.HtmlFile.InputStream, settings, "Index");
+                return new PdfResult(_converter, model.HtmlFile.InputStream, settings, "Index");
+            }
+            catch (Exception e)
+            {
+                return View("Error", null, e.Message);
+            }
         }
 
         private ConvertViewModel PopulateViewModel()
